@@ -1,9 +1,8 @@
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
-
 
 // OS設定を日本語キーボードのまま使用するための変換定義
 
@@ -43,7 +42,6 @@
         &zip_temp_layer 4 600
     >;
 };
-
 
 / {
     combos {
@@ -86,15 +84,6 @@
 
     behaviors {
         // Auto-mouse layer activates on trackball movement
-
-        auto_mouse: auto_mouse {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <300>;
-            trigger-period-ms = <16>;
-        };
     };
 
     keymap {
@@ -104,7 +93,7 @@
             bindings = <
 &none  &none             &none     &none     &none     &none                                    &none        &none  &none      &none    &none                 &none
 &none  &kp Q             &kp W     &kp E     &kp R     &kp T                                    &kp Y        &kp U  &kp I      &kp O    &kp P                 &none
-&none  &kp A             &kp S     &kp D     &kp F     &kp G        &none        &none          &kp H        &kp J  &kp K      &kp L    &kp MINUS             &none
+&none  &kp A             &kp S     &lt 3 D   &kp F     &kp G        &none        &none          &kp H        &kp J  &lt 3 K    &kp L    &kp MINUS             &none
 &none  &mt LEFT_SHIFT Z  &kp X     &kp C     &kp V     &kp B        &kp SPACE    &kp RET        &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH  &none
 &none  &kp LCTRL         &kp LGUI  &kp LALT  &kp LALT  &lt 1 SPACE  &lt 3 GRAVE  &kp BACKSPACE  &lt 2 ENTER  &none  &kp F7     &kp F10  &kp LEFT_SHIFT        &none
             >;
